@@ -20,7 +20,7 @@ import { page } from '$app/stores';
             >Return to
         </span><span
             class="font-bold"
-            >Calvera
+            >Polaris
         </span>
         </button>
     {/if}

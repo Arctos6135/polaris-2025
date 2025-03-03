@@ -4,7 +4,7 @@ function doPost(request) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet();
 
   try {
-    const output = sheet.getSheetByName("Calvera Output")
+    const output = sheet.getSheetByName("App Output")
     JSON.parse(request.postData.contents).forEach((response) => {
       output.appendRow(response);
     });
@@ -28,7 +28,7 @@ function doGet() {
 
   try {
     const events = sheet.getSheetByName("Event Data");
-    const teams = sheet.getRangeByName("SetTeamNumberList")
+    const teams = sheet.getRangeByName("GenTeamNumberList")
     const response = {
       success: true,
       matches: [],

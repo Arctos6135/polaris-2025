@@ -1,6 +1,6 @@
 import type { Form, FormType } from "./types";
 
-export const BSForm: Form = {
+export const ScoutingForm: Form = {
     sections: [
         {
             type: "section",
@@ -9,26 +9,66 @@ export const BSForm: Form = {
             inputs: [
                 {
                     type: "input",
-                    label: "Score amp",
-                    tooltip: "The number of notes scored in the amp",
+                    label: "Score L1",
+                    tooltip: "Did they score in L1 (trough) during the autonomous period",
                     component: {
-                        type: "Counter",
-                        id: "auto score amp",
-                        hasButtons: true,
-                        initialValue: 0,
-                        min: 0
+                        type: "Checkbox",
+                        id: "auto score L1"
                     }
                 },
                 {
                     type: "input",
-                    label: "Score speaker",
-                    tooltip: "The number of notes scored in the speaker",
+                    label: "Score L2",
+                    tooltip: "Did they score on L2 during auto",
                     component: {
-                        type: "Counter",
-                        id: "auto score speaker",
-                        hasButtons: true,
-                        initialValue: 0,
-                        min: 0
+                        type: "Checkbox",
+                        id: "auto score L2"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score L3",
+                    tooltip: "Did they score on L3 during auto",
+                    component: {
+                        type: "Checkbox",
+                        id: "auto score L3"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score L4",
+                    tooltip: "Did they score on L4 during auto",
+                    component: {
+                        type: "Checkbox",
+                        id: "auto score L4"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score Processor",
+                    tooltip: "Did they score algae in the processor during auto",
+                    component: {
+                        type: "Checkbox",
+                        id: "auto processor"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score Net",
+                    tooltip: "Did the robot score algae in the net during auto",
+                    component: {
+                        type: "Checkbox",
+                        id: "auto net"
+                    }
+                    
+                },
+                {
+                    type: "input",
+                    label: "Leave",
+                    tooltip: "Did the robot move off the starting line during auto",
+                    component: {
+                        type: "Checkbox",
+                        id: "auto leave"
                     }
                     
                 }
@@ -41,229 +81,169 @@ export const BSForm: Form = {
             inputs: [
                 {
                     type: "input",
-                    label: "Score amp",
-                    tooltip: "The number of notes scored in the amp",
+                    label: "Score L1",
+                    tooltip: "Did they score in L1 (trough) during the teleoperated period",
                     component: {
-                        type: "Counter",
-                        id: "teleop score amp",
-                        hasButtons: true,
-                        initialValue: 0,
-                        min: 0
+                        type: "Checkbox",
+                        id: "score L1"
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Score L2",
+                    tooltip: "Did they score on L2 during teleop",
+                    component: {
+                        type: "Checkbox",
+                        id: "score L2"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score L3",
+                    tooltip: "Did they score on L3 during teleop",
+                    component: {
+                        type: "Checkbox",
+                        id: "score L3"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score L4",
+                    tooltip: "Did they score on L4 during teleop",
+                    component: {
+                        type: "Checkbox",
+                        id: "score L4"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score Processor",
+                    tooltip: "Did they score algae in the processor during teleop",
+                    component: {
+                        type: "Checkbox",
+                        id: "processor"
+                    } 
+                },
+                {
+                    type: "input",
+                    label: "Score Net",
+                    tooltip: "Did the robot score algae in the net during teleop",
+                    component: {
+                        type: "Checkbox",
+                        id: "net"
                     }
                     
                 },
                 {
                     type: "input",
-                    label: "Score speaker",
-                    tooltip: "The number of notes scored in the speaker",
+                    label: "Defense",
+                    tooltip: "Did the robot play defense? if so how and against which team(s)",
                     component: {
-                        type: "Counter",
-                        id: "teleop score speaker",
-                        hasButtons: true,
-                        initialValue: 0,
-                        min: 0
-                    }
-                    
-                },
-                {
-                    type: "input",
-                    label: "Ground intake",
-                    tooltip: "The number of notes intaked off the ground",
-                    component: {
-                        type: "Checkbox",
-                        id: "ground intake",
-                        initialValue: 0
+                        type: "Textbox",
+                        id: "defense",
                     }
                 },
                 {
                     type: "input",
-                    tooltip: "The number of notes intaked from the source locations",
-                    label: "Source (not ground) intake",
+                    label: "Driving",
+                    tooltip: "How was the driving? (did they get in the way, jerky movement)",
                     component: {
-                        type: "Checkbox",
-                        id: "source intake",
-                        initialValue: 0
+                        type: "Textbox",
+                        id: "driving",
                     }
-                }
+                },
+                {
+                    type: "input",
+                    label: "Intake",
+                    tooltip: "How fast/efficient was their intake?",
+                    component: {
+                        type: "Textbox",
+                        id: "intake",
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Scoring Precision",
+                    tooltip: "How precise was their scoring? Did they miss a lot, drop pieces, struggle with certain levels?",
+                    component: {
+                        type: "Textbox",
+                        id: "precision",
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Issues",
+                    tooltip: "Did they encounter any problems? (game piece got stuck, stopped moving, something fell off etc.)",
+                    component: {
+                        type: "Textbox",
+                        id: "issues",
+                    }
+                },
+            ]
+        },
+        {
+            type: "section",
+            id: "endgame",
+            header: "Endgame",
+            inputs:
+            [
+                {
+                    type: "input",
+                    label: "Endgame",
+                    tooltip: "What did they do in the last 30 seconds of the match",
+                    component: {
+                        type: "Dropdown",
+                        id: "endgame",
+                        options: ["Climb Low", "Climb High", "Park", "None"],
+                        validator: (choice: string) => undefined
+                    }
+                },
+            ]
+        },
+        {
+            type: "section",
+            id: "other",
+            header: "Other",
+            inputs:
+            [
+                {
+                    type: "input",
+                    label: "Other Comments",
+                    tooltip: "Any information that doesn't go in one of the above sections",
+                    component: {
+                        type: "Textbox",
+                        id: "comments"
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Fouls",
+                    tooltip: "Try to track how many fouls the team gets and for what",
+                    component: {
+                        type: "Textbox",
+                        id: "fouls"
+                    }
+                },
             ]
         }
+
     ]
 }
 
-export const SSForm: Form = {
+// Add ground/station intake
+export const PitScoutingForm: Form = {
     sections: [
         {
             type: "section",
-            id: "Auto",
-            header: "Auto",
+            id: "scoring",
+            header: "Scoring",
             inputs: [
                 {
                     type: "input",
-                    label: "Used Auto stop?",
-                    tooltip: "Auto stop refers to the A-STOP (i.e. the emergency stop for the autonomous period)",
-                    component: {
-                        type: "Checkbox",
-                        id: "auto stop",
-                        initialValue: 0
-                    }
-                }
-            ]
-        },
-        {
-            type: "section",
-            id: "Teleop",
-            header: "Teleop",
-            inputs: [
-                {
-                    type: "input",
-                    label: "Did defend?",
-                    tooltip: "Did the robot defend another robot?",
-                    component: {
-                        type: "Checkbox",
-                        id: "defended",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Was defended?",
-                    tooltip: "Was the robot defended by another robot?",
-                    component: {
-                        type: "Checkbox",
-                        id: "was defended",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Level of failure",
-                    tooltip: "Minor: small components breaking, nothing game-changing.\nMajor: important components broken, robot tipped, etc. Disrupts the team's ability to play the match effectively or participate at all.\nCatastrophic: failuires that render the team unable to compete for the entire season.",
+                    label: "Can score L1? (trough)",
                     component: {
                         type: "Dropdown",
-                        id: "level of failure",
-                        options: ["None", "Minor", "Major", "Catastrophic"],
-                        manual: false,
-
-                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                        validator: (choice: string) => undefined
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Fouls?",
-                    tooltip: "Select the worst foul received during the match",
-                    component: {
-                        type: "Dropdown",
-                        id: "serious foul",
-                        options: ["None", "Foul", "Tech fouls", "Yellow card", "Red card", "Disqualified"],
-                        manual: false,
-                        
-                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                        validator: (choice: string) => undefined
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Foul details",
-                    tooltip: "Detail the number of each type of foul and why they received each one",
-                    component: {
-                        type: "Textbox",
-                        id: "serious foul reason",
-                        maxLength: 250
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Where do they shoot from?",
-                    tooltip: "Describe relative to other field elements in as much detail as possible. Not distance",
-                    component: {
-                        type: "Textbox",
-                        id: "shooting location",
-                        maxLength: 100
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Comments",
-                    tooltip: "Did the team get a lot of fouls (touched opposing robots in opposing alliance’s source, amp, stage during last 20 seconds)\nHow good against defense?\nHow efficient at amp versus speaker (which seems to be easier for them)\nPath of travel\nAccuracy of shots?\nAny weird things that happened (robot put note in opposing alliance’s amp)",
-                    component: {
-                        type: "Textbox",
-                        id: "comments",
-                        maxLength: 500
-                    }
-                }
-            ]
-        },
-        {
-            type: "section",
-            id: "Endgame",
-            header: "Endgame",
-            inputs: [
-                {
-                    type: "input",
-                    label: "Attempted park",
-                    component: {
-                        type: "Checkbox",
-                        id: "attempted park",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Attempted climb",
-                    component: {
-                        type: "Checkbox",
-                        id: "attempted climb",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Attempted harmony",
-                    component: {
-                        type: "Checkbox",
-                        id: "attempted harmony",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Attempted trap",
-                    component: {
-                        type: "Checkbox",
-                        id: "attempted trap",
-                        initialValue: 0
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Climb time",
-                    tooltip: "The number of seconds the robot took to climb.",
-                    component: {
-                        type: "Counter",
-                        id: "climb time",
-                        initialValue: 0,
-                        hasButtons: false
-                    }
-                }
-            ]
-        }
-    ] 
-} 
-
-export const PSForm: Form = {
-    sections: [
-        {
-            type: "section",
-            id: "pit scouting",
-            header: "Pit scouting",
-            inputs: [
-                {
-                    type: "input",
-                    label: "Can score amp?",
-                    component: {
-                        type: "Dropdown",
-                        id: "amp scoring",
+                        id: "l1 scoring",
                         options: ["Yes", "Maybe", "No"],
                         manual: false,
                         validator: (choice: string) => undefined
@@ -271,10 +251,10 @@ export const PSForm: Form = {
                 },
                 {
                     type: "input",
-                    label: "Can score speaker?",
+                    label: "Can score L2?",
                     component: {
                         type: "Dropdown",
-                        id: "speaker scoring",
+                        id: "l2 scoring",
                         options: ["Yes", "Maybe", "No"],
                         manual: false,
                         validator: (choice: string) => undefined
@@ -282,10 +262,70 @@ export const PSForm: Form = {
                 },
                 {
                     type: "input",
-                    label: "Fits under stage?",
+                    label: "Can score L3?",
+                    component: {
+                        type: "Dropdown",
+                        id: "l3 scoring",
+                        options: ["Yes", "Maybe", "No"],
+                        manual: false,
+                        validator: (choice: string) => undefined
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Can score L4?",
+                    component: {
+                        type: "Dropdown",
+                        id: "l4 scoring",
+                        options: ["Yes", "Maybe", "No"],
+                        manual: false,
+                        validator: (choice: string) => undefined
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Can score net?",
+                    component: {
+                        type: "Dropdown",
+                        id: "net scoring",
+                        options: ["Yes", "Maybe", "No"],
+                        manual: false,
+                        validator: (choice: string) => undefined
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Can score processor?",
+                    component: {
+                        type: "Dropdown",
+                        id: "processor scoring",
+                        options: ["Yes", "Maybe", "No"],
+                        manual: false,
+                        validator: (choice: string) => undefined
+                    }
+                }
+            ]
+        },
+        {
+            type: "section",
+            id: "robot info",
+            header: "Robot Information",
+            inputs: [
+                {
+                    type: "input",
+                    label: "Deep climb?",
                     component: {
                         type: "Checkbox",
-                        id: "under stage",
+                        id: "deep climb",
+                        initialValue: 0
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Shallow climb?",
+                    component: {
+                        type: "Checkbox",
+                        id: "shallow climb",
                         initialValue: 0
                     }
                 },
@@ -332,40 +372,69 @@ export const PSForm: Form = {
                 },
                 {
                     type: "input",
-                    label: "Height (inches)",
+                    label: "Intake",
+                    component: {
+                        type: "Dropdown",
+                        id: "intake",
+                        options: ["Ground", "Station", "Both"],
+                        validator: (choice: String) => undefined
+                    }
+
+                },
+                {
+                    type: "input",
+                    label: "Starting Height (inches)",
                     component: {
                         type: "Counter",
-                        id: "height",
+                        id: "retracted height",
                         initialValue: 0,
                         hasButtons: false
                     }
                 },
                 {
                     type: "input",
-                    label: "List of autos",
+                    label: "Maximum Height (inches)",
+                    component: {
+                        type: "Counter",
+                        id: "extended height",
+                        initialValue: 0,
+                        hasButtons: false
+                    }
+                }
+            ]
+        },
+        {
+            type: "section",
+            id: "other",
+            header: "Other",
+            inputs: [
+                {
+                    type: "input",
+                    label: "Autos comments",
+                    tooltip: "What autos do they have, how consistently they work, other info",
                     component: {
                         type: "Textbox",
-                        id: "autos",
+                        id: "auto comments",
+                        maxLength: 200
+                    }
+                },
+                {
+                    type: "input",
+                    label: "General Comments",
+                    component: {
+                        type: "Textbox",
+                        id: "general comments",
                         maxLength: 200
                     }
                 },
                 {
                     type: "input",
                     label: "Robot's favourite colour",
-                    tooltip: "Most important question.",
+                    tooltip: "Most important question",
                     component: {
                         type: "Textbox",
                         id: "fave colour",
                         maxLength: 42
-                    }
-                },
-                {
-                    type: "input",
-                    label: "Comments",
-                    component: {
-                        type: "Textbox",
-                        id: "comments",
-                        maxLength: 200
                     }
                 }
             ]
@@ -376,14 +445,10 @@ export const PSForm: Form = {
 export const formTypes: FormType[] = [
     {
         name: "Scouting",
-        type: BSForm
-    },
-    {
-        name: "Super Scouting",
-        type: SSForm
+        type: ScoutingForm
     },
     {
         name: "Pit Scouting",
-        type: PSForm
+        type: PitScoutingForm
     }
 ]

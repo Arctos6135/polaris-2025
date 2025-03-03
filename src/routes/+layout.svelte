@@ -66,7 +66,7 @@
     <button 
         class="text-white text-3xl font-bold text-center"
         on:click={returnHome}
-        >Calvera
+        >Polaris
     </button>
 </nav>
 

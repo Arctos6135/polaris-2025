@@ -9,7 +9,6 @@
     import ResponseList from "$lib/components/ResponseList.svelte";
 	import { matches, response, activeResponses } from "$lib/store";
 	import { onMount } from "svelte";
-    import { BSForm, PSForm, SSForm } from "$lib/formLayout";
     import { goto } from "$app/navigation"
 
     let choice = "a";
