@@ -17,7 +17,7 @@
         (response) => response.id != $response
         );
         $response = null;
-        goto("/", { replaceState: true });
+        goto("..", { replaceState: true });
     };
 
     export const submitResponse = () => {
@@ -28,7 +28,7 @@
         $activeResponses = responses;
         $responseQueue = [...$responseQueue, res];
         $response = null;
-        goto("/", { replaceState: true });
+        goto("..", { replaceState: true });
     };
 
     //Idk how this works I just copied it from polaris :)
