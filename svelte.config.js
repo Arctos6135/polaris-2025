@@ -5,13 +5,13 @@ import preprocess from "svelte-preprocess";
 const config = {
   kit: {
     adapter: adapter(),
-    assets: `https://${arctos6135.github.io/polaris-2025}`
   },
   preprocess: [
     preprocess({
       postcss: true,
     }),
   ],
+  assets: `https://arctos6135.github.io/polaris-2025`
 };
 
 export default config;
