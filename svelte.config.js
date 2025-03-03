@@ -11,7 +11,7 @@ const config = {
       postcss: true,
     }),
   ],
-  assets: `https://arctos6135.github.io/polaris-2025`
+
 };
 
 export default config;

@@ -46,8 +46,8 @@
     }
     onMount(() => {
       sync();
-      preloadData("/form");
-      preloadCode("/form");
+      preloadData("form");
+      preloadCode("form");
     })
 </script>
 
