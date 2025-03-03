@@ -68,7 +68,7 @@
                     class:clickable={!$errors[$response]}
                     class:!bg-enabled={!$errors[$response]}
                     disabled={$errors[$response]}
-                    on:click={() => goto("/")}>✔ Done</button
+                    on:click={() => goto("./")}>✔ Done</button
                 >
             </div>
 
@@ -77,7 +77,7 @@
             <div class="text-center">
                 <div class="font-bold text-3xl mb-1 mt-12">No Valid Form</div>
                 <button
-                    on:click={() => goto("/")}
+                    on:click={() => goto("./")}
                     class="button clickable mt-7"
                 ><span
                     class="font-normal"
