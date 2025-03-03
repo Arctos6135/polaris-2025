@@ -31,5 +31,5 @@ export const submitResponse = (id: number) => {
   
 export const setResponse = (id: number) => {
   response.set(id);
-  goto("polaris-2025/form");
+  goto("/form");
 };
