@@ -6,7 +6,7 @@
 	import { get, append } from "$lib/sheet";
 
     const returnHome = () => {
-        goto("/");
+        goto("");
     }
 
     // couldn't make this work, hopefully not necessary
