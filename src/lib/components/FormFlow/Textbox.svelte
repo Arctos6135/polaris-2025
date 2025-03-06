@@ -4,9 +4,10 @@
     import { activeResponses } from "$lib/store";
 
     export let component: Textbox;
-    export let tooLong: boolean = false;
     export let content: string = "";
     const id: number = getContext("id")
+
+    export let error: String | undefined = undefined;
 
     $: content = String($activeResponses[id].data[component.id] || "");
 
@@ -15,7 +16,7 @@
     const validateLength = () => {
         wordLength = content.length;
 
-        tooLong = (component.maxLength != null && wordLength > component.maxLength)
+        error = (component.maxLength != null && wordLength > component.maxLength) ? "Too long" : wordLength == 0 ? "Field can't be empty" : undefined;
     }
 
     $: {
@@ -35,9 +36,9 @@
         {#if component.maxLength!=null}
             <span 
                 class="absolute right-3 bottom-2 text-gray-400 text-sm"
-                class:!text-red-500={tooLong}
-                class:font-bold={tooLong}
-                class:text-lg={tooLong}
+                class:!text-red-500={error}
+                class:font-bold={error}
+                class:text-lg={error}
                 >{wordLength} / {component.maxLength}
             </span>
         {/if}

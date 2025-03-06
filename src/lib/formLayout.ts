@@ -149,12 +149,12 @@ export const ScoutingForm: Form = {
                     tooltip: "How was the driving? (did they get in the way, jerky movement)",
                     component: {
                         type: "Textbox",
-                        id: "driving",
+                        id: "driving",                        
                     }
                 },
                 {
                     type: "input",
-                    label: "Intake",
+                    label: "Quality of Intaking",
                     tooltip: "How fast/efficient was their intake?",
                     component: {
                         type: "Textbox",
@@ -194,7 +194,7 @@ export const ScoutingForm: Form = {
                     component: {
                         type: "Dropdown",
                         id: "endgame",
-                        options: ["Climb Low", "Climb High", "Park", "None"],
+                        options: ["Deep Climb", "Shallow Climb", "Park", "None"],
                         validator: (choice: string) => undefined
                     }
                 },
