@@ -1,6 +1,6 @@
 //The name and code suggests this file does the spreadsheet/server stuff
 
-import { keys, lastGet, matches, teams } from "$lib/store";
+import { keys, lastGet, matches, response, teams } from "$lib/store";
 import type {
   Team,
   Alliance,
@@ -31,20 +31,33 @@ export const get = async () => {
 
 //Formats app data so it can be sent to the spreadsheet
 export const append = async (responseQueue: Response[]) => {
+  const body = JSON.stringify(responseQueue.map((response) => ({
+    team: response.team,
+    match: response.match,
+    scout: response.scout,
+    alliance: response.alliance,
+    type: response.type.name,
+    id: response.id,
+    ...response.data
+  })));
+
+  console.log(body);
+
   try {
     await fetch(PUBLIC_API_URL, {
       method: "POST",
-      body: JSON.stringify(
-        responseQueue.map((response) => [
-          response.team,
-          response.match,
-          response.scout,
-          response.alliance,
-          response.type.name,
-          response.id,
-          ...Object.keys(response.data).map((key: string) => response.data[key]),
-        ])
-      ),
+      body,
+      // body: JSON.stringify(
+      //   responseQueue.map((response) => [
+      //     response.team,
+      //     response.match,
+      //     response.scout,
+      //     response.alliance,
+      //     response.type.name,
+      //     response.id,
+      //     ...Object.keys(response.data).map((key: string) => response.data[key]),
+      //   ])
+      // ),
       headers: {
         "Content-Type": "application/json",
       },

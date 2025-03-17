@@ -14,7 +14,7 @@
         delete res[$response];
         $activeResponses = res;
         $responseQueue = $responseQueue.filter(
-        (response) => response.id != $response
+            (response) => response.id != $response
         );
         $response = null;
         goto("./", { replaceState: true });
@@ -56,7 +56,6 @@
         {#if formType}
             {#each formType.sections as section}       
                 <Section {section} bind:errors={error[section.id]} />
-
                 <div class="mt-5"></div>
             {/each}
             <div class="text-center">
