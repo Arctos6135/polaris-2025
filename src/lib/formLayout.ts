@@ -375,7 +375,7 @@ export const PitScoutingForm: Form = {
                     label: "Intake",
                     component: {
                         type: "Dropdown",
-                        id: "intake",
+                        id: "intake type",
                         options: ["Ground", "Station", "Both"],
                         validator: (choice: String) => undefined
                     }

@@ -29,24 +29,24 @@ const dataRowsMap = {
   "fouls": 27,
 
   // Pit Scouting
-  "l1 scoring": 1,
-  "l2 scoring": 2,
-  "l3 scoring": 3,
-  "l4 scoring": 4,
-  "net scoring": 5,
-  "processor scoring": 6,
-  "deep climb": 7,
-  "shallow climb": 8,
-  "drivetrain": 9,
-  "weight": 10,
-  "length": 11,
-  "width": 12,
-  "intake": 13,
-  "retracted height": 14,
-  "extended height": 15,
-  "auto comments": 16,
-  "general comments": 17,
-  "fave colour": 18,
+  "l1 scoring": 7,
+  "l2 scoring": 8,
+  "l3 scoring": 9,
+  "l4 scoring": 10,
+  "net scoring": 11,
+  "processor scoring": 12,
+  "deep climb": 13,
+  "shallow climb": 14,
+  "drivetrain": 15,
+  "weight": 16,
+  "length": 17,
+  "width": 18,
+  "intake type": 19,
+  "retracted height": 20,
+  "extended height": 21,
+  "auto comments": 22,
+  "general comments": 23,
+  "fave colour": 24,
 }
 
 function doPost(request) {
@@ -59,14 +59,14 @@ function doPost(request) {
     const contents = JSON.parse(request.postData.contents);
     
     // write data
-    const lastRow = output.getLastRow() + 1;
-    // contents.forEach((response) => {
-    //   for (const col in response) {
-    //     const colIdx = dataRowsMap[col];
-    //     output.getRange(lastRow, colIdx).setValue(response[col]);
-    //   }
-    // });
-    output.getRange(lastRow, 3).setValue(request.postData.contents);
+    contents.forEach((response) => {
+      const lastRow = output.getLastRow() + 1;
+      for (const col in response) {
+        const colIdx = dataRowsMap[col];
+        output.getRange(lastRow, colIdx).setValue(response[col]);
+      }
+    });
+    // output.getRange(lastRow + 1, 3).setValue(request.postData.contents);
     return ContentService.createTextOutput(
       JSON.stringify({ success: true })
     ).setMimeType(ContentService.MimeType.JSON);
