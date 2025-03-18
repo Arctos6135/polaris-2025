@@ -47,6 +47,7 @@ const dataRowsMap = {
   "auto comments": 22,
   "general comments": 23,
   "fave colour": 24,
+  "dealgaeification": 25
 }
 
 function doPost(request) {

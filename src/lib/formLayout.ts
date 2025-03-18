@@ -137,9 +137,9 @@ export const ScoutingForm: Form = {
                 {
                     type: "input",
                     label: "Defense",
-                    tooltip: "Did the robot play defense? if so how and against which team(s)",
+                    tooltip: "Did the robot play defense during the match?",
                     component: {
-                        type: "Textbox",
+                        type: "Checkbox",
                         id: "defense",
                     }
                 },
@@ -299,6 +299,17 @@ export const PitScoutingForm: Form = {
                     component: {
                         type: "Dropdown",
                         id: "processor scoring",
+                        options: ["Yes", "Maybe", "No"],
+                        manual: false,
+                        validator: (choice: string) => undefined
+                    }
+                },
+                {
+                    type: "input",
+                    label: "Can dealgaeify?",
+                    component: {
+                        type: "Dropdown",
+                        id: "dealgaeification",
                         options: ["Yes", "Maybe", "No"],
                         manual: false,
                         validator: (choice: string) => undefined
