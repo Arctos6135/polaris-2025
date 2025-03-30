@@ -27,6 +27,7 @@ const dataRowsMap = {
   "issues": 25,
   "comments": 26,
   "fouls": 27,
+  "dealgaeification": 28,
 
   // Pit Scouting
   "l1 scoring": 7,
@@ -47,7 +48,7 @@ const dataRowsMap = {
   "auto comments": 22,
   "general comments": 23,
   "fave colour": 24,
-  "dealgaeification": 25
+  "ps dealgaeification": 25
 }
 
 function doPost(request) {

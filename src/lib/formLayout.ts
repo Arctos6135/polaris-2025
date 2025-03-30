@@ -117,6 +117,16 @@ export const ScoutingForm: Form = {
                 },
                 {
                     type: "input",
+                    label: "Dealgaeification",
+                    tooltip: "Did the robot remove algae from the reef",
+                    component: {
+                        type: "Checkbox",
+                        id: "dealgaeification"
+                        
+                    }
+                },
+                {
+                    type: "input",
                     label: "Score Processor",
                     tooltip: "Did they score algae in the processor during teleop",
                     component: {
@@ -309,7 +319,7 @@ export const PitScoutingForm: Form = {
                     label: "Can dealgaeify?",
                     component: {
                         type: "Dropdown",
-                        id: "dealgaeification",
+                        id: "ps dealgaeification",
                         options: ["Yes", "Maybe", "No"],
                         manual: false,
                         validator: (choice: string) => undefined

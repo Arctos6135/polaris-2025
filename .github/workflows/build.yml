@@ -9,7 +9,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
-  PUBLIC_API_URL: https://script.google.com/macros/s/AKfycbyQLvDTXJPArUJWgdJJ1bmzOiYMQJ_eTuTuiuCYo7oaGBtb2eXe0ylLxXpiwBWd-M-F/exec
+  PUBLIC_API_URL: https://script.google.com/macros/s/AKfycbxfI10lePR_s_usbeW7zUkkxo3BiRXFcb8laegAqHt8TCVOlGnknQNxEz5zQQ6yPLU/exec
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
