@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
   import "../app.css";
 	import { goto, preloadCode, preloadData } from "$app/navigation";
 	import { onMount } from "svelte";
 	import { lastGet, responseQueue } from "$lib/store";
 	import { get, append } from "$lib/sheet";
+
+  let commitHash = __GIT_COMMIT__;
 
     const returnHome = () => {
         goto("./");
@@ -73,3 +75,9 @@
 <main class="bg-background px-4">
     <slot />
 </main>
+
+<footer class="md:max-w-[600px] mx-auto mt-6">
+  <div class="text-center text-gray-400">
+    Polaris • Arctos6135 • Version {commitHash}
+  </div>
+</footer>
