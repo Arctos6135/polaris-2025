@@ -24,8 +24,6 @@
     let enabled = false;
 
     let content: string;
-
-    console.log("test")
 </script>
 
 <div class="md:max-w-[600px] mx-auto">
