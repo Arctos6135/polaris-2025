@@ -1,12 +1,14 @@
 <script>
 	import { goto } from '$app/navigation';
 import { page } from '$app/stores';
+
+// Test comment
 </script>
 
 <div class="text-center">
     {#if $page.error}
         <h1
-            class="font-bold text-7xl mb-1 mt-7"
+            class="mb-1 font-bold text-7xl mt-7"
         >{$page.status}</h1>
         <p
             class="text-xl"
@@ -14,7 +16,7 @@ import { page } from '$app/stores';
 
         <button
             on:click={() => goto("/")}
-            class="button clickable mt-5 transition-all"
+            class="mt-5 transition-all button clickable"
         ><span
             class="font-normal"
             >Return to
